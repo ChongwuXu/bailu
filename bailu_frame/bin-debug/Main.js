@@ -74,7 +74,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
-        return _super.call(this) || this;
+        var _this = _super.call(this) || this;
+        var ob = {
+            token: "1234567",
+            openId: "ssss",
+            player: {
+                account: "1234567",
+                nickname: "nihaoha"
+            }
+        };
+        var w = pb.json.GameLoginReq.encode(ob);
+        var r = pb.json.GameLoginReq.decode(w.finish());
+        console.log("--------------------------->>>>" + JSON.stringify(r.toJSON()));
+        return _this;
         // this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
     Main.prototype.onAddToStage = function (event) {
