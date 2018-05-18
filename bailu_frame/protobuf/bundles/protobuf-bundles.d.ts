@@ -1,7 +1,7 @@
 type Long = protobuf.Long;
 
-/** Namespace pb. */
-declare namespace pb {
+/** Namespace game. */
+declare namespace game {
 
     /** Namespace json. */
     namespace json {
@@ -23,7 +23,7 @@ declare namespace pb {
              * Constructs a new MsgPlayer.
              * @param [properties] Properties to set
              */
-            constructor(properties?: pb.json.IMsgPlayer);
+            constructor(properties?: game.json.IMsgPlayer);
 
             /** MsgPlayer account. */
             public account: string;
@@ -36,23 +36,23 @@ declare namespace pb {
              * @param [properties] Properties to set
              * @returns MsgPlayer instance
              */
-            public static create(properties?: pb.json.IMsgPlayer): pb.json.MsgPlayer;
+            public static create(properties?: game.json.IMsgPlayer): game.json.MsgPlayer;
 
             /**
-             * Encodes the specified MsgPlayer message. Does not implicitly {@link pb.json.MsgPlayer.verify|verify} messages.
+             * Encodes the specified MsgPlayer message. Does not implicitly {@link game.json.MsgPlayer.verify|verify} messages.
              * @param message MsgPlayer message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: pb.json.IMsgPlayer, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: game.json.IMsgPlayer, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified MsgPlayer message, length delimited. Does not implicitly {@link pb.json.MsgPlayer.verify|verify} messages.
+             * Encodes the specified MsgPlayer message, length delimited. Does not implicitly {@link game.json.MsgPlayer.verify|verify} messages.
              * @param message MsgPlayer message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: pb.json.IMsgPlayer, writer?: protobuf.Writer): protobuf.Writer;
+            public static encodeDelimited(message: game.json.IMsgPlayer, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
              * Decodes a MsgPlayer message from the specified reader or buffer.
@@ -62,7 +62,7 @@ declare namespace pb {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): pb.json.MsgPlayer;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): game.json.MsgPlayer;
 
             /**
              * Decodes a MsgPlayer message from the specified reader or buffer, length delimited.
@@ -71,7 +71,7 @@ declare namespace pb {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): pb.json.MsgPlayer;
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): game.json.MsgPlayer;
 
             /**
              * Verifies a MsgPlayer message.
@@ -85,7 +85,7 @@ declare namespace pb {
              * @param object Plain object
              * @returns MsgPlayer
              */
-            public static fromObject(object: { [k: string]: any }): pb.json.MsgPlayer;
+            public static fromObject(object: { [k: string]: any }): game.json.MsgPlayer;
 
             /**
              * Creates a plain object from a MsgPlayer message. Also converts values to other types if specified.
@@ -93,7 +93,7 @@ declare namespace pb {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: pb.json.MsgPlayer, options?: protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: game.json.MsgPlayer, options?: protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this MsgPlayer to JSON.
@@ -118,7 +118,7 @@ declare namespace pb {
             openId: string;
 
             /** GameLoginReq player */
-            player: pb.json.IMsgPlayer;
+            player: game.json.IMsgPlayer;
         }
 
         /** Represents a GameLoginReq. */
@@ -128,7 +128,7 @@ declare namespace pb {
              * Constructs a new GameLoginReq.
              * @param [properties] Properties to set
              */
-            constructor(properties?: pb.json.IGameLoginReq);
+            constructor(properties?: game.json.IGameLoginReq);
 
             /** GameLoginReq token. */
             public token: string;
@@ -137,30 +137,30 @@ declare namespace pb {
             public openId: string;
 
             /** GameLoginReq player. */
-            public player: pb.json.IMsgPlayer;
+            public player: game.json.IMsgPlayer;
 
             /**
              * Creates a new GameLoginReq instance using the specified properties.
              * @param [properties] Properties to set
              * @returns GameLoginReq instance
              */
-            public static create(properties?: pb.json.IGameLoginReq): pb.json.GameLoginReq;
+            public static create(properties?: game.json.IGameLoginReq): game.json.GameLoginReq;
 
             /**
-             * Encodes the specified GameLoginReq message. Does not implicitly {@link pb.json.GameLoginReq.verify|verify} messages.
+             * Encodes the specified GameLoginReq message. Does not implicitly {@link game.json.GameLoginReq.verify|verify} messages.
              * @param message GameLoginReq message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: pb.json.IGameLoginReq, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: game.json.IGameLoginReq, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified GameLoginReq message, length delimited. Does not implicitly {@link pb.json.GameLoginReq.verify|verify} messages.
+             * Encodes the specified GameLoginReq message, length delimited. Does not implicitly {@link game.json.GameLoginReq.verify|verify} messages.
              * @param message GameLoginReq message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: pb.json.IGameLoginReq, writer?: protobuf.Writer): protobuf.Writer;
+            public static encodeDelimited(message: game.json.IGameLoginReq, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
              * Decodes a GameLoginReq message from the specified reader or buffer.
@@ -170,7 +170,7 @@ declare namespace pb {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): pb.json.GameLoginReq;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): game.json.GameLoginReq;
 
             /**
              * Decodes a GameLoginReq message from the specified reader or buffer, length delimited.
@@ -179,7 +179,7 @@ declare namespace pb {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): pb.json.GameLoginReq;
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): game.json.GameLoginReq;
 
             /**
              * Verifies a GameLoginReq message.
@@ -193,7 +193,7 @@ declare namespace pb {
              * @param object Plain object
              * @returns GameLoginReq
              */
-            public static fromObject(object: { [k: string]: any }): pb.json.GameLoginReq;
+            public static fromObject(object: { [k: string]: any }): game.json.GameLoginReq;
 
             /**
              * Creates a plain object from a GameLoginReq message. Also converts values to other types if specified.
@@ -201,7 +201,7 @@ declare namespace pb {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: pb.json.GameLoginReq, options?: protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: game.json.GameLoginReq, options?: protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this GameLoginReq to JSON.
@@ -214,7 +214,7 @@ declare namespace pb {
         interface IGameLoginResp {
 
             /** GameLoginResp player */
-            player: pb.json.IG_Player;
+            player: game.json.IG_Player;
 
             /** GameLoginResp gold */
             gold: number;
@@ -239,10 +239,10 @@ declare namespace pb {
              * Constructs a new GameLoginResp.
              * @param [properties] Properties to set
              */
-            constructor(properties?: pb.json.IGameLoginResp);
+            constructor(properties?: game.json.IGameLoginResp);
 
             /** GameLoginResp player. */
-            public player: pb.json.IG_Player;
+            public player: game.json.IG_Player;
 
             /** GameLoginResp gold. */
             public gold: number;
@@ -264,23 +264,23 @@ declare namespace pb {
              * @param [properties] Properties to set
              * @returns GameLoginResp instance
              */
-            public static create(properties?: pb.json.IGameLoginResp): pb.json.GameLoginResp;
+            public static create(properties?: game.json.IGameLoginResp): game.json.GameLoginResp;
 
             /**
-             * Encodes the specified GameLoginResp message. Does not implicitly {@link pb.json.GameLoginResp.verify|verify} messages.
+             * Encodes the specified GameLoginResp message. Does not implicitly {@link game.json.GameLoginResp.verify|verify} messages.
              * @param message GameLoginResp message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: pb.json.IGameLoginResp, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: game.json.IGameLoginResp, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified GameLoginResp message, length delimited. Does not implicitly {@link pb.json.GameLoginResp.verify|verify} messages.
+             * Encodes the specified GameLoginResp message, length delimited. Does not implicitly {@link game.json.GameLoginResp.verify|verify} messages.
              * @param message GameLoginResp message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: pb.json.IGameLoginResp, writer?: protobuf.Writer): protobuf.Writer;
+            public static encodeDelimited(message: game.json.IGameLoginResp, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
              * Decodes a GameLoginResp message from the specified reader or buffer.
@@ -290,7 +290,7 @@ declare namespace pb {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): pb.json.GameLoginResp;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): game.json.GameLoginResp;
 
             /**
              * Decodes a GameLoginResp message from the specified reader or buffer, length delimited.
@@ -299,7 +299,7 @@ declare namespace pb {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): pb.json.GameLoginResp;
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): game.json.GameLoginResp;
 
             /**
              * Verifies a GameLoginResp message.
@@ -313,7 +313,7 @@ declare namespace pb {
              * @param object Plain object
              * @returns GameLoginResp
              */
-            public static fromObject(object: { [k: string]: any }): pb.json.GameLoginResp;
+            public static fromObject(object: { [k: string]: any }): game.json.GameLoginResp;
 
             /**
              * Creates a plain object from a GameLoginResp message. Also converts values to other types if specified.
@@ -321,7 +321,7 @@ declare namespace pb {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: pb.json.GameLoginResp, options?: protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: game.json.GameLoginResp, options?: protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this GameLoginResp to JSON.
@@ -359,7 +359,7 @@ declare namespace pb {
              * Constructs a new G_Player.
              * @param [properties] Properties to set
              */
-            constructor(properties?: pb.json.IG_Player);
+            constructor(properties?: game.json.IG_Player);
 
             /** G_Player id. */
             public id: (number|Long);
@@ -384,23 +384,23 @@ declare namespace pb {
              * @param [properties] Properties to set
              * @returns G_Player instance
              */
-            public static create(properties?: pb.json.IG_Player): pb.json.G_Player;
+            public static create(properties?: game.json.IG_Player): game.json.G_Player;
 
             /**
-             * Encodes the specified G_Player message. Does not implicitly {@link pb.json.G_Player.verify|verify} messages.
+             * Encodes the specified G_Player message. Does not implicitly {@link game.json.G_Player.verify|verify} messages.
              * @param message G_Player message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encode(message: pb.json.IG_Player, writer?: protobuf.Writer): protobuf.Writer;
+            public static encode(message: game.json.IG_Player, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
-             * Encodes the specified G_Player message, length delimited. Does not implicitly {@link pb.json.G_Player.verify|verify} messages.
+             * Encodes the specified G_Player message, length delimited. Does not implicitly {@link game.json.G_Player.verify|verify} messages.
              * @param message G_Player message or plain object to encode
              * @param [writer] Writer to encode to
              * @returns Writer
              */
-            public static encodeDelimited(message: pb.json.IG_Player, writer?: protobuf.Writer): protobuf.Writer;
+            public static encodeDelimited(message: game.json.IG_Player, writer?: protobuf.Writer): protobuf.Writer;
 
             /**
              * Decodes a G_Player message from the specified reader or buffer.
@@ -410,7 +410,7 @@ declare namespace pb {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): pb.json.G_Player;
+            public static decode(reader: (protobuf.Reader|Uint8Array), length?: number): game.json.G_Player;
 
             /**
              * Decodes a G_Player message from the specified reader or buffer, length delimited.
@@ -419,7 +419,7 @@ declare namespace pb {
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {protobuf.util.ProtocolError} If required fields are missing
              */
-            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): pb.json.G_Player;
+            public static decodeDelimited(reader: (protobuf.Reader|Uint8Array)): game.json.G_Player;
 
             /**
              * Verifies a G_Player message.
@@ -433,7 +433,7 @@ declare namespace pb {
              * @param object Plain object
              * @returns G_Player
              */
-            public static fromObject(object: { [k: string]: any }): pb.json.G_Player;
+            public static fromObject(object: { [k: string]: any }): game.json.G_Player;
 
             /**
              * Creates a plain object from a G_Player message. Also converts values to other types if specified.
@@ -441,7 +441,7 @@ declare namespace pb {
              * @param [options] Conversion options
              * @returns Plain object
              */
-            public static toObject(message: pb.json.G_Player, options?: protobuf.IConversionOptions): { [k: string]: any };
+            public static toObject(message: game.json.G_Player, options?: protobuf.IConversionOptions): { [k: string]: any };
 
             /**
              * Converts this G_Player to JSON.

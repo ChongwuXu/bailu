@@ -339,15 +339,4 @@ declare module 'built-in' {
         constructor(options: RenamePluginOptions);
     }
 
-    type ResSplitPluginOptions = {
-
-        verbose?: boolean
-
-        matchers: { from: string, to: string }[]
-    }
-
-    export class ResSplitPlugin implements plugins.Command {
-        constructor(options: ResSplitPluginOptions);
-    }
-
 }

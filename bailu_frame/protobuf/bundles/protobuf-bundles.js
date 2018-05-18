@@ -6,20 +6,20 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.pb = (function() {
+$root.game = (function() {
 
     /**
-     * Namespace pb.
-     * @exports pb
+     * Namespace game.
+     * @exports game
      * @namespace
      */
-    var pb = {};
+    var game = {};
 
-    pb.json = (function() {
+    game.json = (function() {
 
         /**
          * Namespace json.
-         * @memberof pb
+         * @memberof game
          * @namespace
          */
         var json = {};
@@ -28,7 +28,7 @@ $root.pb = (function() {
 
             /**
              * Properties of a MsgPlayer.
-             * @memberof pb.json
+             * @memberof game.json
              * @interface IMsgPlayer
              * @property {string} account MsgPlayer account
              * @property {string} nickname MsgPlayer nickname
@@ -36,11 +36,11 @@ $root.pb = (function() {
 
             /**
              * Constructs a new MsgPlayer.
-             * @memberof pb.json
+             * @memberof game.json
              * @classdesc Represents a MsgPlayer.
              * @implements IMsgPlayer
              * @constructor
-             * @param {pb.json.IMsgPlayer=} [properties] Properties to set
+             * @param {game.json.IMsgPlayer=} [properties] Properties to set
              */
             function MsgPlayer(properties) {
                 if (properties)
@@ -52,7 +52,7 @@ $root.pb = (function() {
             /**
              * MsgPlayer account.
              * @member {string} account
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @instance
              */
             MsgPlayer.prototype.account = "";
@@ -60,7 +60,7 @@ $root.pb = (function() {
             /**
              * MsgPlayer nickname.
              * @member {string} nickname
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @instance
              */
             MsgPlayer.prototype.nickname = "";
@@ -68,21 +68,21 @@ $root.pb = (function() {
             /**
              * Creates a new MsgPlayer instance using the specified properties.
              * @function create
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @static
-             * @param {pb.json.IMsgPlayer=} [properties] Properties to set
-             * @returns {pb.json.MsgPlayer} MsgPlayer instance
+             * @param {game.json.IMsgPlayer=} [properties] Properties to set
+             * @returns {game.json.MsgPlayer} MsgPlayer instance
              */
             MsgPlayer.create = function create(properties) {
                 return new MsgPlayer(properties);
             };
 
             /**
-             * Encodes the specified MsgPlayer message. Does not implicitly {@link pb.json.MsgPlayer.verify|verify} messages.
+             * Encodes the specified MsgPlayer message. Does not implicitly {@link game.json.MsgPlayer.verify|verify} messages.
              * @function encode
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @static
-             * @param {pb.json.IMsgPlayer} message MsgPlayer message or plain object to encode
+             * @param {game.json.IMsgPlayer} message MsgPlayer message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -95,11 +95,11 @@ $root.pb = (function() {
             };
 
             /**
-             * Encodes the specified MsgPlayer message, length delimited. Does not implicitly {@link pb.json.MsgPlayer.verify|verify} messages.
+             * Encodes the specified MsgPlayer message, length delimited. Does not implicitly {@link game.json.MsgPlayer.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @static
-             * @param {pb.json.IMsgPlayer} message MsgPlayer message or plain object to encode
+             * @param {game.json.IMsgPlayer} message MsgPlayer message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -110,18 +110,18 @@ $root.pb = (function() {
             /**
              * Decodes a MsgPlayer message from the specified reader or buffer.
              * @function decode
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {pb.json.MsgPlayer} MsgPlayer
+             * @returns {game.json.MsgPlayer} MsgPlayer
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             MsgPlayer.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.pb.json.MsgPlayer();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.game.json.MsgPlayer();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -146,10 +146,10 @@ $root.pb = (function() {
             /**
              * Decodes a MsgPlayer message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {pb.json.MsgPlayer} MsgPlayer
+             * @returns {game.json.MsgPlayer} MsgPlayer
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -162,7 +162,7 @@ $root.pb = (function() {
             /**
              * Verifies a MsgPlayer message.
              * @function verify
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -180,15 +180,15 @@ $root.pb = (function() {
             /**
              * Creates a MsgPlayer message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {pb.json.MsgPlayer} MsgPlayer
+             * @returns {game.json.MsgPlayer} MsgPlayer
              */
             MsgPlayer.fromObject = function fromObject(object) {
-                if (object instanceof $root.pb.json.MsgPlayer)
+                if (object instanceof $root.game.json.MsgPlayer)
                     return object;
-                var message = new $root.pb.json.MsgPlayer();
+                var message = new $root.game.json.MsgPlayer();
                 if (object.account != null)
                     message.account = String(object.account);
                 if (object.nickname != null)
@@ -199,9 +199,9 @@ $root.pb = (function() {
             /**
              * Creates a plain object from a MsgPlayer message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @static
-             * @param {pb.json.MsgPlayer} message MsgPlayer
+             * @param {game.json.MsgPlayer} message MsgPlayer
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -223,7 +223,7 @@ $root.pb = (function() {
             /**
              * Converts this MsgPlayer to JSON.
              * @function toJSON
-             * @memberof pb.json.MsgPlayer
+             * @memberof game.json.MsgPlayer
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -236,7 +236,7 @@ $root.pb = (function() {
 
         /**
          * E_ErrorCode enum.
-         * @name pb.json.E_ErrorCode
+         * @name game.json.E_ErrorCode
          * @enum {string}
          * @property {number} NO_ERROR=0 NO_ERROR value
          * @property {number} LOGIN_ON_OTHER_DEVICE=1 LOGIN_ON_OTHER_DEVICE value
@@ -252,20 +252,20 @@ $root.pb = (function() {
 
             /**
              * Properties of a GameLoginReq.
-             * @memberof pb.json
+             * @memberof game.json
              * @interface IGameLoginReq
              * @property {string} token GameLoginReq token
              * @property {string} openId GameLoginReq openId
-             * @property {pb.json.IMsgPlayer} player GameLoginReq player
+             * @property {game.json.IMsgPlayer} player GameLoginReq player
              */
 
             /**
              * Constructs a new GameLoginReq.
-             * @memberof pb.json
+             * @memberof game.json
              * @classdesc Represents a GameLoginReq.
              * @implements IGameLoginReq
              * @constructor
-             * @param {pb.json.IGameLoginReq=} [properties] Properties to set
+             * @param {game.json.IGameLoginReq=} [properties] Properties to set
              */
             function GameLoginReq(properties) {
                 if (properties)
@@ -277,7 +277,7 @@ $root.pb = (function() {
             /**
              * GameLoginReq token.
              * @member {string} token
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @instance
              */
             GameLoginReq.prototype.token = "";
@@ -285,15 +285,15 @@ $root.pb = (function() {
             /**
              * GameLoginReq openId.
              * @member {string} openId
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @instance
              */
             GameLoginReq.prototype.openId = "";
 
             /**
              * GameLoginReq player.
-             * @member {pb.json.IMsgPlayer} player
-             * @memberof pb.json.GameLoginReq
+             * @member {game.json.IMsgPlayer} player
+             * @memberof game.json.GameLoginReq
              * @instance
              */
             GameLoginReq.prototype.player = null;
@@ -301,21 +301,21 @@ $root.pb = (function() {
             /**
              * Creates a new GameLoginReq instance using the specified properties.
              * @function create
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @static
-             * @param {pb.json.IGameLoginReq=} [properties] Properties to set
-             * @returns {pb.json.GameLoginReq} GameLoginReq instance
+             * @param {game.json.IGameLoginReq=} [properties] Properties to set
+             * @returns {game.json.GameLoginReq} GameLoginReq instance
              */
             GameLoginReq.create = function create(properties) {
                 return new GameLoginReq(properties);
             };
 
             /**
-             * Encodes the specified GameLoginReq message. Does not implicitly {@link pb.json.GameLoginReq.verify|verify} messages.
+             * Encodes the specified GameLoginReq message. Does not implicitly {@link game.json.GameLoginReq.verify|verify} messages.
              * @function encode
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @static
-             * @param {pb.json.IGameLoginReq} message GameLoginReq message or plain object to encode
+             * @param {game.json.IGameLoginReq} message GameLoginReq message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -324,16 +324,16 @@ $root.pb = (function() {
                     writer = $Writer.create();
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.openId);
-                $root.pb.json.MsgPlayer.encode(message.player, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                $root.game.json.MsgPlayer.encode(message.player, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
             /**
-             * Encodes the specified GameLoginReq message, length delimited. Does not implicitly {@link pb.json.GameLoginReq.verify|verify} messages.
+             * Encodes the specified GameLoginReq message, length delimited. Does not implicitly {@link game.json.GameLoginReq.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @static
-             * @param {pb.json.IGameLoginReq} message GameLoginReq message or plain object to encode
+             * @param {game.json.IGameLoginReq} message GameLoginReq message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -344,18 +344,18 @@ $root.pb = (function() {
             /**
              * Decodes a GameLoginReq message from the specified reader or buffer.
              * @function decode
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {pb.json.GameLoginReq} GameLoginReq
+             * @returns {game.json.GameLoginReq} GameLoginReq
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             GameLoginReq.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.pb.json.GameLoginReq();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.game.json.GameLoginReq();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -366,7 +366,7 @@ $root.pb = (function() {
                         message.openId = reader.string();
                         break;
                     case 3:
-                        message.player = $root.pb.json.MsgPlayer.decode(reader, reader.uint32());
+                        message.player = $root.game.json.MsgPlayer.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -385,10 +385,10 @@ $root.pb = (function() {
             /**
              * Decodes a GameLoginReq message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {pb.json.GameLoginReq} GameLoginReq
+             * @returns {game.json.GameLoginReq} GameLoginReq
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -401,7 +401,7 @@ $root.pb = (function() {
             /**
              * Verifies a GameLoginReq message.
              * @function verify
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -414,7 +414,7 @@ $root.pb = (function() {
                 if (!$util.isString(message.openId))
                     return "openId: string expected";
                 {
-                    var error = $root.pb.json.MsgPlayer.verify(message.player);
+                    var error = $root.game.json.MsgPlayer.verify(message.player);
                     if (error)
                         return "player." + error;
                 }
@@ -424,23 +424,23 @@ $root.pb = (function() {
             /**
              * Creates a GameLoginReq message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {pb.json.GameLoginReq} GameLoginReq
+             * @returns {game.json.GameLoginReq} GameLoginReq
              */
             GameLoginReq.fromObject = function fromObject(object) {
-                if (object instanceof $root.pb.json.GameLoginReq)
+                if (object instanceof $root.game.json.GameLoginReq)
                     return object;
-                var message = new $root.pb.json.GameLoginReq();
+                var message = new $root.game.json.GameLoginReq();
                 if (object.token != null)
                     message.token = String(object.token);
                 if (object.openId != null)
                     message.openId = String(object.openId);
                 if (object.player != null) {
                     if (typeof object.player !== "object")
-                        throw TypeError(".pb.json.GameLoginReq.player: object expected");
-                    message.player = $root.pb.json.MsgPlayer.fromObject(object.player);
+                        throw TypeError(".game.json.GameLoginReq.player: object expected");
+                    message.player = $root.game.json.MsgPlayer.fromObject(object.player);
                 }
                 return message;
             };
@@ -448,9 +448,9 @@ $root.pb = (function() {
             /**
              * Creates a plain object from a GameLoginReq message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @static
-             * @param {pb.json.GameLoginReq} message GameLoginReq
+             * @param {game.json.GameLoginReq} message GameLoginReq
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -468,14 +468,14 @@ $root.pb = (function() {
                 if (message.openId != null && message.hasOwnProperty("openId"))
                     object.openId = message.openId;
                 if (message.player != null && message.hasOwnProperty("player"))
-                    object.player = $root.pb.json.MsgPlayer.toObject(message.player, options);
+                    object.player = $root.game.json.MsgPlayer.toObject(message.player, options);
                 return object;
             };
 
             /**
              * Converts this GameLoginReq to JSON.
              * @function toJSON
-             * @memberof pb.json.GameLoginReq
+             * @memberof game.json.GameLoginReq
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -490,9 +490,9 @@ $root.pb = (function() {
 
             /**
              * Properties of a GameLoginResp.
-             * @memberof pb.json
+             * @memberof game.json
              * @interface IGameLoginResp
-             * @property {pb.json.IG_Player} player GameLoginResp player
+             * @property {game.json.IG_Player} player GameLoginResp player
              * @property {number} gold GameLoginResp gold
              * @property {number} volume GameLoginResp volume
              * @property {number} diamonds GameLoginResp diamonds
@@ -502,11 +502,11 @@ $root.pb = (function() {
 
             /**
              * Constructs a new GameLoginResp.
-             * @memberof pb.json
+             * @memberof game.json
              * @classdesc Represents a GameLoginResp.
              * @implements IGameLoginResp
              * @constructor
-             * @param {pb.json.IGameLoginResp=} [properties] Properties to set
+             * @param {game.json.IGameLoginResp=} [properties] Properties to set
              */
             function GameLoginResp(properties) {
                 if (properties)
@@ -517,8 +517,8 @@ $root.pb = (function() {
 
             /**
              * GameLoginResp player.
-             * @member {pb.json.IG_Player} player
-             * @memberof pb.json.GameLoginResp
+             * @member {game.json.IG_Player} player
+             * @memberof game.json.GameLoginResp
              * @instance
              */
             GameLoginResp.prototype.player = null;
@@ -526,7 +526,7 @@ $root.pb = (function() {
             /**
              * GameLoginResp gold.
              * @member {number} gold
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @instance
              */
             GameLoginResp.prototype.gold = 0;
@@ -534,7 +534,7 @@ $root.pb = (function() {
             /**
              * GameLoginResp volume.
              * @member {number} volume
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @instance
              */
             GameLoginResp.prototype.volume = 0;
@@ -542,7 +542,7 @@ $root.pb = (function() {
             /**
              * GameLoginResp diamonds.
              * @member {number} diamonds
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @instance
              */
             GameLoginResp.prototype.diamonds = 0;
@@ -550,7 +550,7 @@ $root.pb = (function() {
             /**
              * GameLoginResp time.
              * @member {number|Long} time
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @instance
              */
             GameLoginResp.prototype.time = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
@@ -558,7 +558,7 @@ $root.pb = (function() {
             /**
              * GameLoginResp checkCode.
              * @member {number} checkCode
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @instance
              */
             GameLoginResp.prototype.checkCode = 0;
@@ -566,28 +566,28 @@ $root.pb = (function() {
             /**
              * Creates a new GameLoginResp instance using the specified properties.
              * @function create
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @static
-             * @param {pb.json.IGameLoginResp=} [properties] Properties to set
-             * @returns {pb.json.GameLoginResp} GameLoginResp instance
+             * @param {game.json.IGameLoginResp=} [properties] Properties to set
+             * @returns {game.json.GameLoginResp} GameLoginResp instance
              */
             GameLoginResp.create = function create(properties) {
                 return new GameLoginResp(properties);
             };
 
             /**
-             * Encodes the specified GameLoginResp message. Does not implicitly {@link pb.json.GameLoginResp.verify|verify} messages.
+             * Encodes the specified GameLoginResp message. Does not implicitly {@link game.json.GameLoginResp.verify|verify} messages.
              * @function encode
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @static
-             * @param {pb.json.IGameLoginResp} message GameLoginResp message or plain object to encode
+             * @param {game.json.IGameLoginResp} message GameLoginResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
             GameLoginResp.encode = function encode(message, writer) {
                 if (!writer)
                     writer = $Writer.create();
-                $root.pb.json.G_Player.encode(message.player, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                $root.game.json.G_Player.encode(message.player, writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
                 writer.uint32(/* id 2, wireType 0 =*/16).int32(message.gold);
                 writer.uint32(/* id 3, wireType 0 =*/24).int32(message.volume);
                 writer.uint32(/* id 4, wireType 0 =*/32).int32(message.diamonds);
@@ -597,11 +597,11 @@ $root.pb = (function() {
             };
 
             /**
-             * Encodes the specified GameLoginResp message, length delimited. Does not implicitly {@link pb.json.GameLoginResp.verify|verify} messages.
+             * Encodes the specified GameLoginResp message, length delimited. Does not implicitly {@link game.json.GameLoginResp.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @static
-             * @param {pb.json.IGameLoginResp} message GameLoginResp message or plain object to encode
+             * @param {game.json.IGameLoginResp} message GameLoginResp message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -612,23 +612,23 @@ $root.pb = (function() {
             /**
              * Decodes a GameLoginResp message from the specified reader or buffer.
              * @function decode
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {pb.json.GameLoginResp} GameLoginResp
+             * @returns {game.json.GameLoginResp} GameLoginResp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             GameLoginResp.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.pb.json.GameLoginResp();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.game.json.GameLoginResp();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
                     case 1:
-                        message.player = $root.pb.json.G_Player.decode(reader, reader.uint32());
+                        message.player = $root.game.json.G_Player.decode(reader, reader.uint32());
                         break;
                     case 2:
                         message.gold = reader.int32();
@@ -668,10 +668,10 @@ $root.pb = (function() {
             /**
              * Decodes a GameLoginResp message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {pb.json.GameLoginResp} GameLoginResp
+             * @returns {game.json.GameLoginResp} GameLoginResp
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -684,7 +684,7 @@ $root.pb = (function() {
             /**
              * Verifies a GameLoginResp message.
              * @function verify
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -693,7 +693,7 @@ $root.pb = (function() {
                 if (typeof message !== "object" || message === null)
                     return "object expected";
                 {
-                    var error = $root.pb.json.G_Player.verify(message.player);
+                    var error = $root.game.json.G_Player.verify(message.player);
                     if (error)
                         return "player." + error;
                 }
@@ -713,19 +713,19 @@ $root.pb = (function() {
             /**
              * Creates a GameLoginResp message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {pb.json.GameLoginResp} GameLoginResp
+             * @returns {game.json.GameLoginResp} GameLoginResp
              */
             GameLoginResp.fromObject = function fromObject(object) {
-                if (object instanceof $root.pb.json.GameLoginResp)
+                if (object instanceof $root.game.json.GameLoginResp)
                     return object;
-                var message = new $root.pb.json.GameLoginResp();
+                var message = new $root.game.json.GameLoginResp();
                 if (object.player != null) {
                     if (typeof object.player !== "object")
-                        throw TypeError(".pb.json.GameLoginResp.player: object expected");
-                    message.player = $root.pb.json.G_Player.fromObject(object.player);
+                        throw TypeError(".game.json.GameLoginResp.player: object expected");
+                    message.player = $root.game.json.G_Player.fromObject(object.player);
                 }
                 if (object.gold != null)
                     message.gold = object.gold | 0;
@@ -750,9 +750,9 @@ $root.pb = (function() {
             /**
              * Creates a plain object from a GameLoginResp message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @static
-             * @param {pb.json.GameLoginResp} message GameLoginResp
+             * @param {game.json.GameLoginResp} message GameLoginResp
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -773,7 +773,7 @@ $root.pb = (function() {
                     object.checkCode = 0;
                 }
                 if (message.player != null && message.hasOwnProperty("player"))
-                    object.player = $root.pb.json.G_Player.toObject(message.player, options);
+                    object.player = $root.game.json.G_Player.toObject(message.player, options);
                 if (message.gold != null && message.hasOwnProperty("gold"))
                     object.gold = message.gold;
                 if (message.volume != null && message.hasOwnProperty("volume"))
@@ -793,7 +793,7 @@ $root.pb = (function() {
             /**
              * Converts this GameLoginResp to JSON.
              * @function toJSON
-             * @memberof pb.json.GameLoginResp
+             * @memberof game.json.GameLoginResp
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -808,7 +808,7 @@ $root.pb = (function() {
 
             /**
              * Properties of a G_Player.
-             * @memberof pb.json
+             * @memberof game.json
              * @interface IG_Player
              * @property {number|Long} id G_Player id
              * @property {string} account G_Player account
@@ -820,11 +820,11 @@ $root.pb = (function() {
 
             /**
              * Constructs a new G_Player.
-             * @memberof pb.json
+             * @memberof game.json
              * @classdesc Represents a G_Player.
              * @implements IG_Player
              * @constructor
-             * @param {pb.json.IG_Player=} [properties] Properties to set
+             * @param {game.json.IG_Player=} [properties] Properties to set
              */
             function G_Player(properties) {
                 if (properties)
@@ -836,7 +836,7 @@ $root.pb = (function() {
             /**
              * G_Player id.
              * @member {number|Long} id
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @instance
              */
             G_Player.prototype.id = $util.Long ? $util.Long.fromBits(0,0,false) : 0;
@@ -844,7 +844,7 @@ $root.pb = (function() {
             /**
              * G_Player account.
              * @member {string} account
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @instance
              */
             G_Player.prototype.account = "";
@@ -852,7 +852,7 @@ $root.pb = (function() {
             /**
              * G_Player nickname.
              * @member {string} nickname
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @instance
              */
             G_Player.prototype.nickname = "";
@@ -860,7 +860,7 @@ $root.pb = (function() {
             /**
              * G_Player level.
              * @member {number} level
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @instance
              */
             G_Player.prototype.level = 0;
@@ -868,7 +868,7 @@ $root.pb = (function() {
             /**
              * G_Player exp.
              * @member {number} exp
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @instance
              */
             G_Player.prototype.exp = 0;
@@ -876,7 +876,7 @@ $root.pb = (function() {
             /**
              * G_Player vipLv.
              * @member {number} vipLv
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @instance
              */
             G_Player.prototype.vipLv = 0;
@@ -884,21 +884,21 @@ $root.pb = (function() {
             /**
              * Creates a new G_Player instance using the specified properties.
              * @function create
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @static
-             * @param {pb.json.IG_Player=} [properties] Properties to set
-             * @returns {pb.json.G_Player} G_Player instance
+             * @param {game.json.IG_Player=} [properties] Properties to set
+             * @returns {game.json.G_Player} G_Player instance
              */
             G_Player.create = function create(properties) {
                 return new G_Player(properties);
             };
 
             /**
-             * Encodes the specified G_Player message. Does not implicitly {@link pb.json.G_Player.verify|verify} messages.
+             * Encodes the specified G_Player message. Does not implicitly {@link game.json.G_Player.verify|verify} messages.
              * @function encode
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @static
-             * @param {pb.json.IG_Player} message G_Player message or plain object to encode
+             * @param {game.json.IG_Player} message G_Player message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -915,11 +915,11 @@ $root.pb = (function() {
             };
 
             /**
-             * Encodes the specified G_Player message, length delimited. Does not implicitly {@link pb.json.G_Player.verify|verify} messages.
+             * Encodes the specified G_Player message, length delimited. Does not implicitly {@link game.json.G_Player.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @static
-             * @param {pb.json.IG_Player} message G_Player message or plain object to encode
+             * @param {game.json.IG_Player} message G_Player message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -930,18 +930,18 @@ $root.pb = (function() {
             /**
              * Decodes a G_Player message from the specified reader or buffer.
              * @function decode
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {pb.json.G_Player} G_Player
+             * @returns {game.json.G_Player} G_Player
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             G_Player.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.pb.json.G_Player();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.game.json.G_Player();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -986,10 +986,10 @@ $root.pb = (function() {
             /**
              * Decodes a G_Player message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {pb.json.G_Player} G_Player
+             * @returns {game.json.G_Player} G_Player
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -1002,7 +1002,7 @@ $root.pb = (function() {
             /**
              * Verifies a G_Player message.
              * @function verify
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -1028,15 +1028,15 @@ $root.pb = (function() {
             /**
              * Creates a G_Player message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {pb.json.G_Player} G_Player
+             * @returns {game.json.G_Player} G_Player
              */
             G_Player.fromObject = function fromObject(object) {
-                if (object instanceof $root.pb.json.G_Player)
+                if (object instanceof $root.game.json.G_Player)
                     return object;
-                var message = new $root.pb.json.G_Player();
+                var message = new $root.game.json.G_Player();
                 if (object.id != null)
                     if ($util.Long)
                         (message.id = $util.Long.fromValue(object.id)).unsigned = false;
@@ -1062,9 +1062,9 @@ $root.pb = (function() {
             /**
              * Creates a plain object from a G_Player message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @static
-             * @param {pb.json.G_Player} message G_Player
+             * @param {game.json.G_Player} message G_Player
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -1105,7 +1105,7 @@ $root.pb = (function() {
             /**
              * Converts this G_Player to JSON.
              * @function toJSON
-             * @memberof pb.json.G_Player
+             * @memberof game.json.G_Player
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -1119,5 +1119,5 @@ $root.pb = (function() {
         return json;
     })();
 
-    return pb;
+    return game;
 })();
