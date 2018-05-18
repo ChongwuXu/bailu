@@ -1,2 +1,3 @@
 .DS_Store
-frame/bin-debug
+frame/bin-debug/*.*
+frame/template/runtime/*.js
