@@ -6,20 +6,20 @@ var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.ut
 // Exported root namespace
 var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.game = (function() {
+$root.pb = (function() {
 
     /**
-     * Namespace game.
-     * @exports game
+     * Namespace pb.
+     * @exports pb
      * @namespace
      */
-    var game = {};
+    var pb = {};
 
-    game.json = (function() {
+    pb.json = (function() {
 
         /**
          * Namespace json.
-         * @memberof game
+         * @memberof pb
          * @namespace
          */
         var json = {};
@@ -28,7 +28,7 @@ $root.game = (function() {
 
             /**
              * Properties of a MsgPlayer.
-             * @memberof game.json
+             * @memberof pb.json
              * @interface IMsgPlayer
              * @property {string} account MsgPlayer account
              * @property {string} nickname MsgPlayer nickname
@@ -36,11 +36,11 @@ $root.game = (function() {
 
             /**
              * Constructs a new MsgPlayer.
-             * @memberof game.json
+             * @memberof pb.json
              * @classdesc Represents a MsgPlayer.
              * @implements IMsgPlayer
              * @constructor
-             * @param {game.json.IMsgPlayer=} [properties] Properties to set
+             * @param {pb.json.IMsgPlayer=} [properties] Properties to set
              */
             function MsgPlayer(properties) {
                 if (properties)
@@ -52,7 +52,7 @@ $root.game = (function() {
             /**
              * MsgPlayer account.
              * @member {string} account
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @instance
              */
             MsgPlayer.prototype.account = "";
@@ -60,7 +60,7 @@ $root.game = (function() {
             /**
              * MsgPlayer nickname.
              * @member {string} nickname
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @instance
              */
             MsgPlayer.prototype.nickname = "";
@@ -68,21 +68,21 @@ $root.game = (function() {
             /**
              * Creates a new MsgPlayer instance using the specified properties.
              * @function create
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @static
-             * @param {game.json.IMsgPlayer=} [properties] Properties to set
-             * @returns {game.json.MsgPlayer} MsgPlayer instance
+             * @param {pb.json.IMsgPlayer=} [properties] Properties to set
+             * @returns {pb.json.MsgPlayer} MsgPlayer instance
              */
             MsgPlayer.create = function create(properties) {
                 return new MsgPlayer(properties);
             };
 
             /**
-             * Encodes the specified MsgPlayer message. Does not implicitly {@link game.json.MsgPlayer.verify|verify} messages.
+             * Encodes the specified MsgPlayer message. Does not implicitly {@link pb.json.MsgPlayer.verify|verify} messages.
              * @function encode
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @static
-             * @param {game.json.IMsgPlayer} message MsgPlayer message or plain object to encode
+             * @param {pb.json.IMsgPlayer} message MsgPlayer message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -95,11 +95,11 @@ $root.game = (function() {
             };
 
             /**
-             * Encodes the specified MsgPlayer message, length delimited. Does not implicitly {@link game.json.MsgPlayer.verify|verify} messages.
+             * Encodes the specified MsgPlayer message, length delimited. Does not implicitly {@link pb.json.MsgPlayer.verify|verify} messages.
              * @function encodeDelimited
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @static
-             * @param {game.json.IMsgPlayer} message MsgPlayer message or plain object to encode
+             * @param {pb.json.IMsgPlayer} message MsgPlayer message or plain object to encode
              * @param {$protobuf.Writer} [writer] Writer to encode to
              * @returns {$protobuf.Writer} Writer
              */
@@ -110,18 +110,18 @@ $root.game = (function() {
             /**
              * Decodes a MsgPlayer message from the specified reader or buffer.
              * @function decode
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
              * @param {number} [length] Message length if known beforehand
-             * @returns {game.json.MsgPlayer} MsgPlayer
+             * @returns {pb.json.MsgPlayer} MsgPlayer
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
             MsgPlayer.decode = function decode(reader, length) {
                 if (!(reader instanceof $Reader))
                     reader = $Reader.create(reader);
-                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.game.json.MsgPlayer();
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.pb.json.MsgPlayer();
                 while (reader.pos < end) {
                     var tag = reader.uint32();
                     switch (tag >>> 3) {
@@ -146,10 +146,10 @@ $root.game = (function() {
             /**
              * Decodes a MsgPlayer message from the specified reader or buffer, length delimited.
              * @function decodeDelimited
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @static
              * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-             * @returns {game.json.MsgPlayer} MsgPlayer
+             * @returns {pb.json.MsgPlayer} MsgPlayer
              * @throws {Error} If the payload is not a reader or valid buffer
              * @throws {$protobuf.util.ProtocolError} If required fields are missing
              */
@@ -162,7 +162,7 @@ $root.game = (function() {
             /**
              * Verifies a MsgPlayer message.
              * @function verify
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @static
              * @param {Object.<string,*>} message Plain object to verify
              * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -180,15 +180,15 @@ $root.game = (function() {
             /**
              * Creates a MsgPlayer message from a plain object. Also converts values to their respective internal types.
              * @function fromObject
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @static
              * @param {Object.<string,*>} object Plain object
-             * @returns {game.json.MsgPlayer} MsgPlayer
+             * @returns {pb.json.MsgPlayer} MsgPlayer
              */
             MsgPlayer.fromObject = function fromObject(object) {
-                if (object instanceof $root.game.json.MsgPlayer)
+                if (object instanceof $root.pb.json.MsgPlayer)
                     return object;
-                var message = new $root.game.json.MsgPlayer();
+                var message = new $root.pb.json.MsgPlayer();
                 if (object.account != null)
                     message.account = String(object.account);
                 if (object.nickname != null)
@@ -199,9 +199,9 @@ $root.game = (function() {
             /**
              * Creates a plain object from a MsgPlayer message. Also converts values to other types if specified.
              * @function toObject
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @static
-             * @param {game.json.MsgPlayer} message MsgPlayer
+             * @param {pb.json.MsgPlayer} message MsgPlayer
              * @param {$protobuf.IConversionOptions} [options] Conversion options
              * @returns {Object.<string,*>} Plain object
              */
@@ -223,7 +223,7 @@ $root.game = (function() {
             /**
              * Converts this MsgPlayer to JSON.
              * @function toJSON
-             * @memberof game.json.MsgPlayer
+             * @memberof pb.json.MsgPlayer
              * @instance
              * @returns {Object.<string,*>} JSON object
              */
@@ -233,6 +233,30 @@ $root.game = (function() {
 
             return MsgPlayer;
         })();
+
+        return json;
+    })();
+
+    return pb;
+})();
+
+$root.game = (function() {
+
+    /**
+     * Namespace game.
+     * @exports game
+     * @namespace
+     */
+    var game = {};
+
+    game.json = (function() {
+
+        /**
+         * Namespace json.
+         * @memberof game
+         * @namespace
+         */
+        var json = {};
 
         /**
          * E_ErrorCode enum.
@@ -256,7 +280,7 @@ $root.game = (function() {
              * @interface IGameLoginReq
              * @property {string} token GameLoginReq token
              * @property {string} openId GameLoginReq openId
-             * @property {game.json.IMsgPlayer} player GameLoginReq player
+             * @property {pb.json.IMsgPlayer} player GameLoginReq player
              */
 
             /**
@@ -292,7 +316,7 @@ $root.game = (function() {
 
             /**
              * GameLoginReq player.
-             * @member {game.json.IMsgPlayer} player
+             * @member {pb.json.IMsgPlayer} player
              * @memberof game.json.GameLoginReq
              * @instance
              */
@@ -324,7 +348,7 @@ $root.game = (function() {
                     writer = $Writer.create();
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.token);
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.openId);
-                $root.game.json.MsgPlayer.encode(message.player, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                $root.pb.json.MsgPlayer.encode(message.player, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
                 return writer;
             };
 
@@ -366,7 +390,7 @@ $root.game = (function() {
                         message.openId = reader.string();
                         break;
                     case 3:
-                        message.player = $root.game.json.MsgPlayer.decode(reader, reader.uint32());
+                        message.player = $root.pb.json.MsgPlayer.decode(reader, reader.uint32());
                         break;
                     default:
                         reader.skipType(tag & 7);
@@ -414,7 +438,7 @@ $root.game = (function() {
                 if (!$util.isString(message.openId))
                     return "openId: string expected";
                 {
-                    var error = $root.game.json.MsgPlayer.verify(message.player);
+                    var error = $root.pb.json.MsgPlayer.verify(message.player);
                     if (error)
                         return "player." + error;
                 }
@@ -440,7 +464,7 @@ $root.game = (function() {
                 if (object.player != null) {
                     if (typeof object.player !== "object")
                         throw TypeError(".game.json.GameLoginReq.player: object expected");
-                    message.player = $root.game.json.MsgPlayer.fromObject(object.player);
+                    message.player = $root.pb.json.MsgPlayer.fromObject(object.player);
                 }
                 return message;
             };
@@ -468,7 +492,7 @@ $root.game = (function() {
                 if (message.openId != null && message.hasOwnProperty("openId"))
                     object.openId = message.openId;
                 if (message.player != null && message.hasOwnProperty("player"))
-                    object.player = $root.game.json.MsgPlayer.toObject(message.player, options);
+                    object.player = $root.pb.json.MsgPlayer.toObject(message.player, options);
                 return object;
             };
 

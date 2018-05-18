@@ -61,14 +61,6 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private async runGame() {
-        // await this.loadResource()
-        // this.createGameScene();
-        // const result = await RES.getResAsync("description_json")
-        // this.startAnimation(result);
-        // await platform.login();
-        // const userInfo = await platform.getUserInfo();
-        // console.log(userInfo);
-
         let ob = {
             token: "1234567",
             openId: "ssss",
@@ -77,10 +69,10 @@ class Main extends egret.DisplayObjectContainer {
                 nickname: "nihaoha"
             }
         }
-        let w = game.json.GameLoginReq.encode(<any>ob);
-        let r = game.json.GameLoginReq.decode(w.finish());
+        let s = game.json.GameLoginReq;
+        let w = s.encode(<any>ob);
+        let r = s.decode(w.finish());
         console.log("--------------------------->>>>" + JSON.stringify(r.toJSON()));
-  
 
     }
 
