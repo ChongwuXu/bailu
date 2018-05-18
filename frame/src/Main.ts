@@ -33,17 +33,6 @@ class Main extends egret.DisplayObjectContainer {
 
     public constructor() {
         super();
-        //   let ob = {
-        //     token: "1234567",
-        //     openId: "ssss",
-        //     player: {
-        //         account: "1234567",
-        //         nickname: "nihaoha"
-        //     }
-        // }
-        // let w = game.json.GameLoginReq.encode(<any>ob);
-        // let r = game.json.GameLoginReq.decode(w.finish());
-        // console.log("--------------------------->>>>" + JSON.stringify(r.toJSON()));
         this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
 
@@ -69,18 +58,29 @@ class Main extends egret.DisplayObjectContainer {
             console.log(e);
         })
 
-
-
     }
 
     private async runGame() {
-        await this.loadResource()
-        this.createGameScene();
-        const result = await RES.getResAsync("description_json")
-        this.startAnimation(result);
-        await platform.login();
-        const userInfo = await platform.getUserInfo();
-        console.log(userInfo);
+        // await this.loadResource()
+        // this.createGameScene();
+        // const result = await RES.getResAsync("description_json")
+        // this.startAnimation(result);
+        // await platform.login();
+        // const userInfo = await platform.getUserInfo();
+        // console.log(userInfo);
+
+        let ob = {
+            token: "1234567",
+            openId: "ssss",
+            player: {
+                account: "1234567",
+                nickname: "nihaoha"
+            }
+        }
+        let w = game.json.GameLoginReq.encode(<any>ob);
+        let r = game.json.GameLoginReq.decode(w.finish());
+        console.log("--------------------------->>>>" + JSON.stringify(r.toJSON()));
+  
 
     }
 
