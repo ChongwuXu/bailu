@@ -33,18 +33,18 @@ class Main extends egret.DisplayObjectContainer {
 
     public constructor() {
         super();
-          let ob = {
-            token: "1234567",
-            openId: "ssss",
-            player: {
-                account: "1234567",
-                nickname: "nihaoha"
-            }
-        }
-        let w = game.json.GameLoginReq.encode(<any>ob);
-        let r = game.json.GameLoginReq.decode(w.finish());
-        console.log("--------------------------->>>>" + JSON.stringify(r.toJSON()));
-        //this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
+        //   let ob = {
+        //     token: "1234567",
+        //     openId: "ssss",
+        //     player: {
+        //         account: "1234567",
+        //         nickname: "nihaoha"
+        //     }
+        // }
+        // let w = game.json.GameLoginReq.encode(<any>ob);
+        // let r = game.json.GameLoginReq.decode(w.finish());
+        // console.log("--------------------------->>>>" + JSON.stringify(r.toJSON()));
+        this.addEventListener(egret.Event.ADDED_TO_STAGE, this.onAddToStage, this);
     }
 
     private onAddToStage(event: egret.Event) {

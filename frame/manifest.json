@@ -8,7 +8,9 @@
 		"libs/modules/eui/eui.js",
 		"libs/modules/socket/socket.js",
 		"libs/modules/dragonBones/dragonBones.js",
-		"libs/modules/promise/promise.js"
+		"libs/modules/promise/promise.js",
+		"protobuf/library/protobuf-library.js",
+		"protobuf/bundles/protobuf-bundles.js"
 	],
 	"game": [
 		"bin-debug/LoadingUI.js",
