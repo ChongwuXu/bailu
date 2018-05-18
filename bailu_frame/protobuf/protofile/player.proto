@@ -1,5 +1,0 @@
-package game.json;
-message MsgPlayer {
-    required string account = 1; //账号名
-    required string nickname = 2; //昵称
-}
