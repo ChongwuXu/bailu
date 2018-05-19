@@ -61,18 +61,9 @@ class Main extends egret.DisplayObjectContainer {
     }
 
     private async runGame() {
-        let ob = {
-            token: "1234567",
-            openId: "ssss",
-            player: {
-                account: "1234567",
-                nickname: "nihaoha"
-            }
-        }
-        let s = game.json.GameLoginReq;
-        let w = s.encode(<any>ob);
-        let r = s.decode(w.finish());
-        console.log("--------------------------->>>>" + JSON.stringify(r.toJSON()));
+        let ic =  new (core.SocketAPI)();
+        ic.setAddress("118.25.40.163",8088);
+        ic.connect();
 
     }
 

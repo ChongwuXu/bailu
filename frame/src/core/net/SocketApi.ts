@@ -1,21 +1,12 @@
 module core {
     export class SocketAPI {
-
         private static s_instance: SocketAPI;
-
         private m_webSocket: egret.WebSocket;
-        /**
-         * 目标服务器地址
-         */
         private m_address: string;
-        /**
-         * WebSocket连接状态
-         */
         private m_state: WebSocketStateEnum = WebSocketStateEnum.CLOSED;
-        /**
-         * WebSocket发送和接收数据类型
-         */
-        private m_type: WebSocketTypeEnum = WebSocketTypeEnum.TYPE_STRING;
+        private STATE_CODE = "APCDEFCG";
+        private product = "101";
+        private player_id = 10001;
 
         public constructor() {
             let webSocket: egret.WebSocket = new egret.WebSocket();
@@ -23,6 +14,7 @@ module core {
             webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onSocketData, this);
             webSocket.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onIOError, this);
             webSocket.addEventListener(egret.Event.CLOSE, this.onClosed, this);
+            webSocket.type = egret.WebSocket.TYPE_BINARY;
             this.m_webSocket = webSocket;
         }
 
@@ -34,13 +26,30 @@ module core {
         }
 
         private onConnected(event: egret.Event): void {
-            egret.log("与WebSocket服务器链接成功");
             this.m_state = WebSocketStateEnum.CONNECTED;
+            let ob = {
+                token: "1234567",
+                openId: "ssss",
+                player: {
+                    account: "1234567",
+                    nickname: "nihaoha"
+                }
+            }
+            let s = game.json.GameLoginReq;
+            let buffer = s.encode(<any>ob).finish();
+            let buff: egret.ByteArray = new egret.ByteArray(buffer);
+            this.sendData(10001, buff);
         }
 
-        private onSocketData(event: egret.ProgressEvent): void {
-            let buffer: core.ByteBuffer = new core.ByteBuffer();
-            this.m_webSocket.readBytes(buffer, buffer.length);
+        private onSocketData(data: any): void {
+            let buff: egret.ByteArray = new egret.ByteArray();
+            this.m_webSocket.readBytes(buff, buff.length);
+            let code = buff.readInt();
+            let byte: egret.ByteArray = new egret.ByteArray();
+            buff.readBytes(byte);
+            let s = game.json.GameLoginReq;
+            let r = s.decode(byte.bytes);
+            egret.log("-------------------------------------------------->>>>>" + code + " ,message = " + JSON.stringify(r.toJSON()));
         }
 
         private onIOError(event: egret.IOErrorEvent): void {
@@ -53,8 +62,11 @@ module core {
             this.m_state = WebSocketStateEnum.CLOSED;
         }
 
-        public sendData(data: egret.ByteArray): void {
-            this.m_webSocket.writeBytes(data);
+        public sendData(code: number, data: any): void {
+            let buff = new egret.ByteArray();
+            buff.writeInt(code);
+            buff.writeBytes(data);
+            this.m_webSocket.writeBytes(buff);
             egret.callLater(this.flushToServer, this);
         }
 
@@ -76,20 +88,9 @@ module core {
             this.m_address = address;
         }
 
-        public setType(type: WebSocketTypeEnum): void {
-            switch (type) {
-                case WebSocketTypeEnum.TYPE_STRING:
-                    this.m_webSocket.type = egret.WebSocket.TYPE_STRING;
-                    break;
-                case WebSocketTypeEnum.TYPE_BINARY:
-                    this.m_webSocket.type = egret.WebSocket.TYPE_BINARY;
-                    break;
-            }
-        }
-
         public connect(): void {
             this.m_state = WebSocketStateEnum.CONNECTING;
-            this.m_webSocket.connectByUrl(this.m_address);
+            this.m_webSocket.connect("echo.websocket.org", 80);
         }
 
         public close(): void {
@@ -113,14 +114,5 @@ module core {
         CONNECTED,
         CLOSING,
         CLOSED
-    }
-
-    /**
-     * TYPE_STRING 以字符串格式发送和接收数据
-     * TYPE_BINARY 以二进制格式发送和接收数据
-     */
-    export enum WebSocketTypeEnum {
-        TYPE_STRING,
-        TYPE_BINARY
     }
 }
