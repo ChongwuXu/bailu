@@ -1,14 +1,27 @@
 module core {
     export class SocketAPI {
-        private static s_instance: SocketAPI;
         private m_webSocket: egret.WebSocket;
-        private m_address: string;
         private m_state: WebSocketStateEnum = WebSocketStateEnum.CLOSED;
-        private STATE_CODE = "APCDEFCG";
-        private product = "101";
-        private player_id = 10001;
+        private server: string;
+        private port: number;
+        private player_id: number;
 
         public constructor() {
+
+        }
+
+        public addRequest(code:number, message:any) {
+            if (!code) {
+                return;
+            }
+            let PbDta = PbMessages(code);
+            if (PbDta) {
+                let buff: egret.ByteArray = new egret.ByteArray(PbDta.encode(<any>message).finish());
+                this.sendData(code, buff);
+            }
+        }
+
+        public createSocket() {
             let webSocket: egret.WebSocket = new egret.WebSocket();
             webSocket.addEventListener(egret.Event.CONNECT, this.onConnected, this);
             webSocket.addEventListener(egret.ProgressEvent.SOCKET_DATA, this.onSocketData, this);
@@ -18,11 +31,10 @@ module core {
             this.m_webSocket = webSocket;
         }
 
-        public static get instance(): SocketAPI {
-            if (SocketAPI.s_instance == null) {
-                SocketAPI.s_instance = new SocketAPI();
-            }
-            return SocketAPI.s_instance;
+        public setupServer(server:string, port:number, playerId:number) {
+            this.server = server;
+            this.port = port;
+            this.player_id = playerId;
         }
 
         private onConnected(event: egret.Event): void {
@@ -35,22 +47,26 @@ module core {
                     nickname: "nihaoha"
                 }
             }
-            let s = game.json.GameLoginReq;
-            let buffer = s.encode(<any>ob).finish();
-            let buff: egret.ByteArray = new egret.ByteArray(buffer);
-            this.sendData(10001, buff);
+            this.addRequest(ClientProtocol.LOGIN_REQ, ob);
+
         }
 
         private onSocketData(data: any): void {
             let buff: egret.ByteArray = new egret.ByteArray();
             this.m_webSocket.readBytes(buff, buff.length);
             let code = buff.readInt();
-            let byte: egret.ByteArray = new egret.ByteArray();
-            buff.readBytes(byte);
-            let s = game.json.GameLoginReq;
-            let r = s.decode(byte.bytes);
-            egret.log("-------------------------------------------------->>>>>" + code + " ,message = " + JSON.stringify(r.toJSON()));
+            if (code) {
+                let byte: egret.ByteArray = new egret.ByteArray();
+                buff.readBytes(byte);
+                let PbDta = PbMessages(code);
+                if (PbDta) {
+                    let r = PbDta.decode(byte.bytes);
+                    egret.log("-------------------------------------------------->>>>>" + code + " ,message = " + JSON.stringify(r.toJSON()));
+                }
+
+            }
         }
+
 
         private onIOError(event: egret.IOErrorEvent): void {
             egret.log("与WebSocket服务器链接失败");
@@ -65,7 +81,9 @@ module core {
         public sendData(code: number, data: any): void {
             let buff = new egret.ByteArray();
             buff.writeInt(code);
-            buff.writeBytes(data);
+            if (data) {
+                buff.writeBytes(data);
+            }
             this.m_webSocket.writeBytes(buff);
             egret.callLater(this.flushToServer, this);
         }
@@ -73,24 +91,14 @@ module core {
         private flushToServer(): void {
             this.m_webSocket.flush();
         }
-        /**
-         * @param host 服务器IP 如：127.0.0.1
-         * @param port 服务器端口 如：8080
-         * @param isSSL 是否应用SSL
-         */
-        public setAddress(host: string, port: number, isSSL: boolean = false): void {
-            this.m_address = `${isSSL ? 'wss' : 'ws'}://${host}:${port}`;
-        }
-        /**
-         * @param address 服务器地址 如：ws://127.0.0.1:8080 或 wss://127.0.0.1:8080
-         */
-        public setAddressURL(address: string): void {
-            this.m_address = address;
-        }
+
 
         public connect(): void {
+            if (this.m_webSocket) {
+                this.createSocket();
+            }
             this.m_state = WebSocketStateEnum.CONNECTING;
-            this.m_webSocket.connect("echo.websocket.org", 80);
+            this.m_webSocket.connect(this.server, this.port);
         }
 
         public close(): void {

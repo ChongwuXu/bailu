@@ -13,10 +13,13 @@
 		"protobuf/bundles/protobuf-bundles.js"
 	],
 	"game": [
+		"bin-debug/BassData.js",
 		"bin-debug/LoadingUI.js",
 		"bin-debug/Main.js",
 		"bin-debug/Platform.js",
 		"bin-debug/core/net/ByteBuffer.js",
-		"bin-debug/core/net/SocketApi.js"
+		"bin-debug/core/net/SocketApi.js",
+		"bin-debug/protocol/PbMessage.js",
+		"bin-debug/protocol/Protocol.js"
 	]
 }
